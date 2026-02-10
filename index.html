@@ -1,63 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Character encoding for proper text rendering -->
+  <!-- Character encoding for consistent text rendering -->
   <meta charset="UTF-8">
 
-  <!-- Page title shown in browser tab and screen readers -->
-  <title>Don Norman – Home</title>
-</head>
-<body>
+  <!-- Responsive viewport for mobile and accessibility -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Page header: identifies the site and its purpose -->
-  <header>
-    <h1>Don Norman</h1>
-    <p>Human–Computer Interaction Philosopher</p>
+  <!-- Page title shown in browser tab and announced by screen readers -->
+  <title>Home – HCI Portfolio</title>
+</head>
+
+<body
+  style="
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: #2b2b2b;
+    margin: 0;
+  "
+>
+
+  <header style="padding: 24px 20px 10px; max-width: 920px; margin: 0 auto;">
+    <h1 style="margin: 0 0 6px; font-size: 28px;">HCI (CS-555) Week 05 Assignment</h1>
+    <p style="margin: 0; color: #5a5a5a;">
+      Student portfolio: semantic HTML + HCI concepts (Norman, GOMS, KLM)
+    </p>
   </header>
 
-  <!-- Primary navigation landmark for keyboard and screen reader users -->
-  <nav aria-label="Primary navigation">
-    <ul>
-      <!-- Current page is indicated using aria-current -->
-      <li>
-        <a href="index.html" aria-current="page">Home</a>
-      </li>
-
-      <!-- Navigation links to other site sections -->
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="analysis.html">Interaction Analysis</a></li>
-      <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
-      <li><a href="assignment01.html">Lab 01 Rules</a></li>
-
+  <nav aria-label="Primary navigation" style="max-width: 920px; margin: 0 auto 18px; padding: 0 20px;">
+    <ul style="list-style: none; padding: 10px 12px; margin: 0; background-color: #ffffff; border: 1px solid #dddddd; border-radius: 10px;">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="principles.html">HCI Principles</a></li>
+      <li><a href="models.html">Interaction Models</a></li>
+      <li><a href="practice.html">Lab Practice</a></li>
     </ul>
   </nav>
 
-  <!-- Main content landmark: unique content of this page -->
-  <main>
-    <section>
-      <!-- Section heading establishes content hierarchy -->
-      <h2>Biography</h2>
+  <main style="max-width: 920px; margin: 0 auto; padding: 0 20px 10px;">
 
-      <!-- Informative image with alternative text for accessibility -->
-      <img src="norman.jpg" alt="Portrait of Don Norman">
-
+    <section style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 12px; padding: 16px 18px; margin-bottom: 16px;">
+      <h2>
+        About Me
+        <span>(Course context)</span>
+      </h2>
       <p>
-        Don Norman is a pioneer in the field of Human–Computer Interaction,
-        known for his work on user-centered design, usability, and cognitive
-        engineering.
+        I’m <strong>Muhammad Ali</strong>. This site is my Week 05 submission for (CS-555) Human–Computer Interaction.
+        The goal is to demonstrate clean, semantic HTML with minimal CSS and explain HCI concepts using the course book.
       </p>
     </section>
+
+    <section style="background-color: #f0f6ff; border: 1px solid #dbe7ff; border-radius: 12px; padding: 16px 18px; margin-bottom: 16px;">
+      <h2>
+        What is HCI?
+        <span>(Page# 3–4)</span>
+      </h2>
+
+      <p>
+        In this course-book framing, HCI is treated as a central concern in systems design.
+        It involves the <strong>design, implementation, and evaluation</strong> of interactive systems
+        in the context of the user’s <strong>task and work</strong>.
+      </p>
+
+      <p>
+        “User” can mean an individual, a group working together, or multiple users in an organization.
+        So HCI is not limited to a single person using a desktop computer.
+      </p>
+    </section>
+
+  
+
+    <section style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 12px; padding: 16px 18px; margin-bottom: 16px;">
+      <h2>
+        Short-Term Memory and Chunking
+        <span>(Page# 29–30)</span>
+      </h2>
+
+      <p>
+        The book discusses short-term memory capacity often summarized as <strong>7 ± 2</strong> items.
+        A more practical idea is that people can remember roughly <strong>7 ± 2 chunks</strong>, where a chunk
+        is a meaningful grouping of information.
+      </p>
+
+      <p>
+        Design implication: group related information into chunks so users don’t have to memorize long, unstructured lists.
+      </p>
+    </section>
+
+    <section style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 12px; padding: 16px 18px; margin-bottom: 16px;">
+      <h2>
+        Fitts’ Law: size and distance affect target selection time
+        <span>(Chapter 1)</span>
+      </h2>
+
+      <p>
+        The book explains that the time to hit a target depends on the distance to the target and the target’s size.
+        Design implication: important controls should be easier to hit (larger) and easier to reach (closer).
+      </p>
+    </section>
+
+    <section style="background-color: #f0f6ff; border: 1px solid #dbe7ff; border-radius: 12px; padding: 16px 18px; margin-bottom: 16px;">
+      <h2>
+        Book Reference
+        <span>(Dix et al.)</span>
+      </h2>
+
+      <p>
+        Dix, A., Finlay, J., Abowd, G. D., &amp; Beale, R.
+        <em>Human–Computer Interaction</em>.
+      </p>
+
+   
+    </section>
+
   </main>
 
-  <!-- Footer contains meta or supplementary information -->
-  <footer>
-    <p>&copy; 2026 HCI–CG Course</p>
-  <p>
-    <a href="assignment01.html">Lab 01 Instructions</a> |
-    <a href="https://github.com/humeraaa/hci-cg-2026">Starter Code</a> |
-    <a href="https://humeraaa.github.io/hci-cg-2026/">Live Demo</a>
-  </p>
+  <footer style="max-width: 920px; margin: 0 auto; padding: 8px 20px 24px; color: #5a5a5a; font-size: 14px;">
+    <p style="margin: 0;">&copy; CS-555 HCI – Week 05 Submission</p>
   </footer>
 
 </body>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lab Practice – Common HTML & Accessibility Fixes</title>
+</head>
+
+<body
+  style="
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: #2b2b2b;
+    margin: 0;
+  "
+>
+
+  <header style="padding: 24px 20px 10px; max-width: 920px; margin: 0 auto;">
+    <h1 style="margin: 0 0 6px; font-size: 28px;">Lab Practice (HTML Foundations)</h1>
+    <p style="margin: 0; color: #5a5a5a;">
+      This page practices identifying common structure and accessibility mistakes and writing corrected HTML.
+      The purpose is to strengthen clarity and evaluation thinking in interface design.
+    </p>
+  </header>
+
+  <nav aria-label="Primary navigation" style="max-width: 920px; margin: 0 auto 18px; padding: 0 20px;">
+    <ul style="list-style: none; padding: 10px 12px; margin: 0; background-color: #ffffff; border: 1px solid #dddddd; border-radius: 10px;">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="principles.html">HCI Principles</a></li>
+      <li><a href="models.html">Interaction Models</a></li>
+      <li><a href="practice.html" aria-current="page">Lab Practice</a></li>
+    </ul>
+  </nav>
+
+  <main style="max-width: 920px; margin: 0 auto; padding: 0 20px 10px;">
+
+
+
+    <section style="background-color: #f0f6ff; border: 1px solid #dbe7ff; border-radius: 12px; padding: 16px 18px; margin-bottom: 16px;">
+      <h2>
+        Part A: Find Mistakes (Identify + Fix)
+      </h2>
+
+      <p style="margin: 0; color: #5a5a5a;">
+        For each item: (1) identify the issue in one sentence, (2) write the corrected HTML.
+      </p>
+
+      <div style="overflow-x: auto;">
+        <table border="1" style="width: 100%; border-collapse: collapse; table-layout: fixed;">
+          <caption>Common HTML structure and accessibility mistakes (practice format)</caption>
+
+        <thead>
+          <tr>
+            <th scope="col" style="vertical-align: top; padding: 8px; word-break: break-word;">Issue</th>
+            <th scope="col" style="vertical-align: top; padding: 8px; word-break: break-word;">Wrong HTML</th>
+            <th scope="col" style="vertical-align: top; padding: 8px; word-break: break-word;">Correct HTML</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row" style="vertical-align: top; padding: 8px; word-break: break-word;">Navigation link inside <code>ul</code> without <code>li</code></th>
+            <td style="vertical-align: top; padding: 8px; word-break: break-word;">
+              <pre style="white-space: pre-wrap; word-break: break-word; margin: 0;"><code style="white-space: pre-wrap; word-break: break-word;">&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;a href="index.html"&gt;Home&lt;/a&gt;
+    &lt;li&gt;&lt;a href="models.html"&gt;Models&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+            <td style="vertical-align: top; padding: 8px; word-break: break-word;">
+              <pre style="white-space: pre-wrap; word-break: break-word; margin: 0;"><code style="white-space: pre-wrap; word-break: break-word;">&lt;nav aria-label="Primary navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="models.html"&gt;Models&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row" style="vertical-align: top; padding: 8px; word-break: break-word;">More than one <code>aria-current="page"</code> in the same menu</th>
+            <td style="vertical-align: top; padding: 8px; word-break: break-word;">
+              <pre style="white-space: pre-wrap; word-break: break-word; margin: 0;"><code style="white-space: pre-wrap; word-break: break-word;">&lt;nav aria-label="Primary navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="practice.html" aria-current="page"&gt;Practice&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+            <td style="vertical-align: top; padding: 8px; word-break: break-word;">
+              <pre style="white-space: pre-wrap; word-break: break-word; margin: 0;"><code style="white-space: pre-wrap; word-break: break-word;">&lt;nav aria-label="Primary navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="practice.html" aria-current="page"&gt;Practice&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row" style="vertical-align: top; padding: 8px; word-break: break-word;">Label not connected to control (for/id mismatch)</th>
+            <td style="vertical-align: top; padding: 8px; word-break: break-word;">
+              <pre style="white-space: pre-wrap; word-break: break-word; margin: 0;"><code style="white-space: pre-wrap; word-break: break-word;">&lt;label for="msg"&gt;Message&lt;/label&gt;
+&lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;</code></pre>
+            </td>
+            <td style="vertical-align: top; padding: 8px; word-break: break-word;">
+              <pre style="white-space: pre-wrap; word-break: break-word; margin: 0;"><code style="white-space: pre-wrap; word-break: break-word;">&lt;label for="message"&gt;Message&lt;/label&gt;
+&lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;</code></pre>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row" style="vertical-align: top; padding: 8px; word-break: break-word;">Heading hierarchy skips a level</th>
+            <td style="vertical-align: top; padding: 8px; word-break: break-word;">
+              <pre style="white-space: pre-wrap; word-break: break-word; margin: 0;"><code style="white-space: pre-wrap; word-break: break-word;">&lt;h1&gt;Interaction Analysis&lt;/h1&gt;
+&lt;h3&gt;Norman vs GOMS&lt;/h3&gt;</code></pre>
+            </td>
+            <td style="vertical-align: top; padding: 8px; word-break: break-word;">
+              <pre style="white-space: pre-wrap; word-break: break-word; margin: 0;"><code style="white-space: pre-wrap; word-break: break-word;">&lt;h1&gt;Interaction Analysis&lt;/h1&gt;
+&lt;h2&gt;Norman vs GOMS&lt;/h2&gt;</code></pre>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row" style="vertical-align: top; padding: 8px; word-break: break-word;">Comparison table missing caption + header cells</th>
+            <td style="vertical-align: top; padding: 8px; word-break: break-word;">
+              <pre style="white-space: pre-wrap; word-break: break-word; margin: 0;"><code style="white-space: pre-wrap; word-break: break-word;">&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;Model&lt;/td&gt;&lt;td&gt;Predicts&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;KLM&lt;/td&gt;&lt;td&gt;Time&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </td>
+            <td style="vertical-align: top; padding: 8px; word-break: break-word;">
+              <pre style="white-space: pre-wrap; word-break: break-word; margin: 0;"><code style="white-space: pre-wrap; word-break: break-word;">&lt;table&gt;
+  &lt;caption&gt;Models and what they predict&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Model&lt;/th&gt;
+      &lt;th scope="col"&gt;Predicts&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;KLM&lt;/th&gt;
+      &lt;td&gt;Execution time&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 12px; padding: 16px 18px; margin-bottom: 16px;">
+      <h2>
+        Part B: True / False
+      </h2>
+
+      <ul>
+        <li><strong>T/F:</strong> Every link inside <code>&lt;ul&gt;</code> must be inside an <code>&lt;li&gt;</code>.</li>
+        <li><strong>T/F:</strong> A page may have multiple <code>&lt;h1&gt;</code> headings to make text larger.</li>
+        <li><strong>T/F:</strong> <code>aria-current="page"</code> should be used only on the active navigation link.</li>
+        <li><strong>T/F:</strong> A form is accessible even if it has no <code>&lt;label&gt;</code> elements.</li>
+        <li><strong>T/F:</strong> KLM predicts execution time for expert, error-free performance.</li>
+      </ul>
+    </section>
+
+    <section style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 12px; padding: 16px 18px; margin-bottom: 16px;">
+      <h2>
+        Part C: Short Answer
+      </h2>
+
+      <ul>
+        <li>
+          Explain the difference between a semantic element (e.g., <code>nav</code>) and a generic element (e.g., <code>div</code>).
+        </li>
+        <li>
+          Why does KLM not model high-level planning and interpretation?
+        </li>
+      </ul>
+
+      <p style="margin: 0; color: #5a5a5a;">
+        Hint: KLM is an execution-level model. It predicts performance time using low-level operators,
+        and does not model interpretation, learning, or feedback processing.
+      </p>
+    </section>
+
+    <section style="background-color: #f0f6ff; border: 1px solid #dbe7ff; border-radius: 12px; padding: 16px 18px; margin-bottom: 16px;">
+      <h2>Book Reference</h2>
+      <p style="margin: 0; color: #5a5a5a;">
+        Dix, A., Finlay, J., Abowd, G. D., &amp; Beale, R. <em>Human–Computer Interaction</em>.
+      </p>
+      <ul>
+        <li>Evaluation techniques</li>
+        <li>Cognitive models / KLM discussion</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer style="max-width: 920px; margin: 0 auto; padding: 8px 20px 24px; color: #5a5a5a; font-size: 14px;">
+    <p style="margin: 0; color: #5a5a5a;"><a href="index.html">Back to Home</a></p>
+  </footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
